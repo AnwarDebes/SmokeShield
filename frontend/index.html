@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="Predict your indoor air quality during wildfire smoke. Free, no login, runs entirely in your browser." />
+<title>SmokeShield - know what you're breathing indoors</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo">SmokeShield</span>
+    <span class="tagline">indoor air during wildfire smoke</span>
+  </div>
+  <div class="meta">no login, no tracking, runs offline</div>
+</header>
+
+<main>
+  <section class="card inputs">
+    <h2>1. Outdoor air</h2>
+    <div class="row">
+      <label>Outdoor PM2.5
+        <input type="number" id="outdoorPm25" min="0" max="600" step="1" value="150" />
+        <span class="unit">&micro;g/m&sup3;</span>
+      </label>
+      <div class="info-pill" id="aqiBadge">AQI ...</div>
+    </div>
+    <div class="row presets">
+      <button data-preset="100" class="preset-btn">Moderate smoke (AQI 173)</button>
+      <button data-preset="250" class="preset-btn">Heavy smoke (AQI 309)</button>
+      <button data-preset="400" class="preset-btn">Hazardous (AQI 466)</button>
+    </div>
+
+    <h2>2. Your home</h2>
+    <div class="row">
+      <label>Home type
+        <select id="archetype">
+          <option value="leaky_old_no_hvac">Older, leaky house (no central HVAC)</option>
+          <option value="typical_modern_merv8" selected>Modern home, central HVAC (default MERV 8)</option>
+          <option value="tight_modern_merv13">Well-sealed home, MERV 13 filter</option>
+          <option value="apartment_window_open">Apartment with windows open</option>
+          <option value="passive_house_hepa">Passive house with HEPA filtration</option>
+          <option value="custom">Custom (advanced)</option>
+        </select>
+      </label>
+    </div>
+
+    <details id="customPanel">
+      <summary>Advanced: customise your home</summary>
+      <div class="grid">
+        <label>Room volume (m&sup3;)
+          <input type="number" id="volume"        min="20" max="2000" step="10" value="400" />
+        </label>
+        <label>Infiltration (ACH)
+          <input type="number" id="infiltration"  min="0" max="3" step="0.05" value="0.4" />
+        </label>
+        <label>Open ventilation (ACH)
+          <input type="number" id="ventilation"   min="0" max="10" step="0.1" value="0" />
+        </label>
+        <label>Penetration factor
+          <input type="number" id="penetration"   min="0" max="1" step="0.05" value="0.8" />
+        </label>
+        <label>HVAC filter (MERV)
+          <select id="merv">
+            <option value="0">No HVAC</option>
+            <option value="4">MERV 4 (cheap fibreglass)</option>
+            <option value="8" selected>MERV 8 (typical default)</option>
+            <option value="11">MERV 11</option>
+            <option value="13">MERV 13 (wildfire smoke)</option>
+            <option value="14">MERV 14</option>
+            <option value="16">MERV 16</option>
+            <option value="17">HEPA</option>
+          </select>
+        </label>
+        <label>HVAC recirculation (ACH)
+          <input type="number" id="hvacAch"       min="0" max="10" step="0.5" value="5" />
+        </label>
+        <label>HVAC duty cycle
+          <input type="number" id="duty"          min="0" max="1" step="0.05" value="0.3" />
+        </label>
+        <label>Portable HEPA (m&sup3;/h CADR)
+          <input type="number" id="portableCadr"  min="0" max="600" step="10" value="0" />
+        </label>
+      </div>
+    </details>
+
+    <h2>3. Forecast horizon</h2>
+    <div class="row">
+      <label>Hours to simulate
+        <input type="number" id="hours" min="6" max="120" step="6" value="48" />
+      </label>
+      <label>Hold outdoor PM2.5 constant?
+        <input type="checkbox" id="constantOutdoor" checked />
+      </label>
+    </div>
+
+    <div class="row">
+      <button id="recompute" class="primary">Forecast my indoor air</button>
+      <button id="saveProfile" class="ghost">Save my home</button>
+    </div>
+    <div class="hint" id="statusHint"></div>
+  </section>
+
+  <section class="card output">
+    <div class="output-header">
+      <h2>What you would breathe indoors</h2>
+      <div class="now-pill" id="nowBox">
+        <div class="now-label">Steady-state indoor</div>
+        <div class="now-value"><span id="indoorNow">-</span> <span class="unit">&micro;g/m&sup3;</span></div>
+        <div class="now-aqi" id="indoorAqi">AQI -</div>
+        <div class="now-io" id="ioRatio">I/O ratio -</div>
+      </div>
+    </div>
+
+    <canvas id="chart" width="900" height="320" aria-label="Indoor vs outdoor PM2.5 over time"></canvas>
+    <div class="chart-legend">
+      <span class="dot outdoor"></span> Outdoor PM2.5
+      <span class="dot indoor"></span> Predicted indoor PM2.5
+      <span class="dot guideline"></span> WHO 24-h guideline (15 &micro;g/m&sup3;)
+    </div>
+
+    <h3>Daily breathing exposure</h3>
+    <div class="metric-row">
+      <div class="metric">
+        <div class="metric-value" id="twa">-</div>
+        <div class="metric-label">Time-weighted &micro;g/m&sup3; (90% time indoors)</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value" id="rr">-</div>
+        <div class="metric-label">Mortality risk vs. clean-air reference</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value" id="risk">-</div>
+        <div class="metric-label">Health category (EPA)</div>
+      </div>
+    </div>
+
+    <h3>What to do <small>ranked by reduction</small></h3>
+    <ol id="recs" class="recs"></ol>
+    <p class="disclaimer">SmokeShield is a public-domain physical model.  It is not a medical device.  For severe asthma, COPD, pregnancy, or infants follow your local health authority's smoke advisory.</p>
+  </section>
+</main>
+
+<footer>
+  <span>Built on the ASHRAE 52.2 / Liu-Nazaroff mass-balance model. EPA AQI 2024 breakpoints. WHO 2021 guidelines.</span>
+  <a href="./about.html">how it works</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

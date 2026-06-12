@@ -1,0 +1,132 @@
+<svg width="1200" height="320" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SmokeShield banner">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2b1a12"/>
+      <stop offset="0.6" stop-color="#4a2a18"/>
+      <stop offset="1" stop-color="#54301c"/>
+    </linearGradient>
+    <linearGradient id="indoor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16293a"/>
+      <stop offset="1" stop-color="#1b3145"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="320" rx="16" fill="url(#sky)"/>
+
+  <!-- dim red sun in smoke -->
+  <circle cx="655" cy="66" r="36" fill="#d94f30" opacity="0.18"/>
+  <circle cx="655" cy="66" r="21" fill="#d94f30" opacity="0.85"/>
+
+  <!-- smoke wisps -->
+  <g fill="none" stroke="#d8c4b0" stroke-linecap="round">
+    <path d="M 40 60 C 180 40, 300 76, 470 58 C 560 49, 610 60, 700 52" stroke-width="14" opacity="0.10"/>
+    <path d="M 120 100 C 260 86, 380 112, 540 98 C 620 91, 660 100, 720 94" stroke-width="10" opacity="0.13"/>
+    <path d="M 60 196 C 200 184, 330 206, 480 196 C 580 189, 650 198, 716 192" stroke-width="12" opacity="0.10"/>
+  </g>
+
+  <!-- PM2.5 particles outside -->
+  <g fill="#e0c9ae">
+    <circle cx="430" cy="52"  r="2.4" opacity="0.5"/>
+    <circle cx="500" cy="84"  r="1.8" opacity="0.4"/>
+    <circle cx="560" cy="44"  r="2.0" opacity="0.45"/>
+    <circle cx="610" cy="110" r="2.6" opacity="0.5"/>
+    <circle cx="690" cy="80"  r="1.7" opacity="0.4"/>
+    <circle cx="580" cy="150" r="2.2" opacity="0.5"/>
+    <circle cx="640" cy="176" r="1.8" opacity="0.45"/>
+    <circle cx="700" cy="140" r="2.5" opacity="0.55"/>
+    <circle cx="360" cy="230" r="2.0" opacity="0.45"/>
+    <circle cx="430" cy="252" r="2.4" opacity="0.5"/>
+    <circle cx="520" cy="238" r="1.7" opacity="0.4"/>
+    <circle cx="600" cy="252" r="2.2" opacity="0.5"/>
+    <circle cx="668" cy="232" r="1.9" opacity="0.45"/>
+    <circle cx="700" cy="206" r="2.3" opacity="0.5"/>
+  </g>
+
+  <!-- hill and conifer silhouettes -->
+  <path d="M 0 290 C 120 268, 240 282, 360 274 C 480 266, 560 282, 660 276 L 740 280 L 740 320 L 0 320 Z" fill="#1d120c"/>
+  <g fill="#1d120c">
+    <path d="M 320 274 l 11 -30 l 11 30 Z"/>
+    <path d="M 348 276 l 9 -22 l 9 22 Z"/>
+    <path d="M 540 278 l 12 -34 l 12 34 Z"/>
+    <path d="M 572 280 l 9 -24 l 9 24 Z"/>
+  </g>
+
+  <!-- wordmark and tagline -->
+  <text x="60" y="118" font-family="Segoe UI, Helvetica, Arial, sans-serif"
+        font-size="54" font-weight="800" letter-spacing="0.5">
+    <tspan fill="#f3e8d8">Smoke</tspan><tspan fill="#5fd0c0">Shield</tspan>
+  </text>
+  <text x="63" y="156" font-family="Segoe UI, Helvetica, Arial, sans-serif"
+        font-size="21" fill="#e3cdb6">When wildfire smoke hits, know what</text>
+  <text x="63" y="184" font-family="Segoe UI, Helvetica, Arial, sans-serif"
+        font-size="21" fill="#e3cdb6">"stay indoors" really means for your home.</text>
+
+  <!-- outdoor AQI chip -->
+  <rect x="60" y="210" width="262" height="32" rx="16" fill="#7e0023" opacity="0.95"/>
+  <circle cx="80" cy="226" r="6" fill="#ff9eb5"/>
+  <text x="96" y="231" font-family="Segoe UI, Helvetica, Arial, sans-serif"
+        font-size="14" font-weight="600" fill="#ffd7e0">OUTDOOR AQI 312 &#183; HAZARDOUS</text>
+
+  <!-- footer line -->
+  <text x="60" y="307" font-family="Segoe UI, Helvetica, Arial, sans-serif"
+        font-size="12.5" fill="#c7a78f" letter-spacing="1">PM2.5 MASS-BALANCE &#183; MERV / HEPA FILTERS &#183; EPA AQI &#183; FREE &#183; NO LOGIN</text>
+
+  <!-- ====== the house, cutaway ====== -->
+  <path d="M 750 265 L 750 110 L 947 45 L 1145 110 L 1145 265 Z" fill="url(#indoor)"/>
+  <!-- roof -->
+  <path d="M 735 112 L 947 42 L 1159 112" fill="none" stroke="#f3e8d8" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- walls and floor -->
+  <path d="M 750 110 L 750 265 L 1145 265 L 1145 110" fill="none" stroke="#f3e8d8" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- filter slab in the left wall -->
+  <rect x="742" y="142" width="16" height="52" fill="#5fd0c0" opacity="0.9"/>
+  <g stroke="#16293a" stroke-width="2">
+    <line x1="745" y1="146" x2="755" y2="156"/>
+    <line x1="745" y1="158" x2="755" y2="168"/>
+    <line x1="745" y1="170" x2="755" y2="180"/>
+    <line x1="745" y1="182" x2="755" y2="190"/>
+  </g>
+
+  <!-- shield badge above the filter -->
+  <path d="M 750 116 L 765 122 L 765 134 C 765 144 758 150 750 154 C 742 150 735 144 735 134 L 735 122 Z"
+        fill="#103328" stroke="#5fd0c0" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M 743 135 l 5 5 l 10 -11" fill="none" stroke="#5fd0c0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- dirty air in, clean air out -->
+  <g stroke="#c98a5a" stroke-width="4" stroke-linecap="round" fill="none">
+    <path d="M 690 156 L 730 156"/>
+    <path d="M 690 180 L 730 180"/>
+  </g>
+  <path d="M 730 150 l 10 6 l -10 6 Z" fill="#c98a5a"/>
+  <path d="M 730 174 l 10 6 l -10 6 Z" fill="#c98a5a"/>
+  <g stroke="#5fd0c0" stroke-width="4" stroke-linecap="round" fill="none">
+    <path d="M 764 156 C 786 152, 800 162, 822 158"/>
+    <path d="M 764 180 C 786 176, 800 186, 822 182"/>
+  </g>
+
+  <!-- air purifier -->
+  <rect x="1086" y="196" width="44" height="64" rx="8" fill="#cfd8dd"/>
+  <g stroke="#7e8b92" stroke-width="2.5">
+    <line x1="1094" y1="210" x2="1122" y2="210"/>
+    <line x1="1094" y1="220" x2="1122" y2="220"/>
+    <line x1="1094" y1="230" x2="1122" y2="230"/>
+  </g>
+  <circle cx="1108" cy="248" r="4" fill="#5fd0c0"/>
+  <g fill="none" stroke="#5fd0c0" stroke-width="2.5" stroke-linecap="round" opacity="0.7">
+    <path d="M 1100 188 C 1094 178 1104 172 1098 162"/>
+    <path d="M 1116 188 C 1110 178 1120 172 1114 162"/>
+  </g>
+
+  <!-- sparse clean indoor particles -->
+  <g fill="#9fd9d0">
+    <circle cx="860" cy="130" r="1.6" opacity="0.35"/>
+    <circle cx="920" cy="170" r="1.4" opacity="0.3"/>
+    <circle cx="1040" cy="148" r="1.6" opacity="0.35"/>
+  </g>
+
+  <!-- indoor AQI chip -->
+  <rect x="836" y="216" width="232" height="32" rx="16" fill="#e0b400"/>
+  <circle cx="856" cy="232" r="6" fill="#5d4a00"/>
+  <text x="872" y="237" font-family="Segoe UI, Helvetica, Arial, sans-serif"
+        font-size="14" font-weight="600" fill="#3d3000">INDOOR AQI 54 &#183; MODERATE</text>
+</svg>

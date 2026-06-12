@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>How SmokeShield works</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <div class="brand">
+    <a href="./" style="text-decoration:none;color:inherit"><span class="logo">SmokeShield</span></a>
+    <span class="tagline">how it works</span>
+  </div>
+  <a class="meta" href="./">&larr; back to the tool</a>
+</header>
+
+<main style="grid-template-columns:1fr;max-width:780px">
+<section class="card">
+<h2>The model</h2>
+<p>SmokeShield is a well-mixed indoor air-quality balance.  The PM2.5
+concentration inside a home of volume <em>V</em> obeys</p>
+<pre style="background:#fbfaf6;padding:0.8rem;border-radius:6px;overflow-x:auto">
+V dC_in/dt = (lambda * P * V) * C_out               &larr; infiltration brings particles in
+           - (lambda + k_dep + eta * Q_hvac * D) * V * C_in   &larr; ventilation, deposition, filtration remove them
+</pre>
+<p>where <em>lambda</em> is the air-change rate (1/h), <em>P</em> is the
+PM2.5 envelope penetration factor (0-1), <em>k_dep</em> is the surface
+deposition rate (typically 0.2-0.3 /h for PM2.5), <em>eta</em> is the
+HVAC filter efficiency (ASHRAE 52.2 MERV-rating dependent),
+<em>Q_hvac</em> is the HVAC recirculation rate (ACH), and <em>D</em>
+is the HVAC duty cycle (0-1).</p>
+<p>At constant outdoor concentration, the steady-state indoor
+concentration is</p>
+<pre style="background:#fbfaf6;padding:0.8rem;border-radius:6px;overflow-x:auto">
+C_in_ss = (lambda * P * C_out) / (lambda + k_dep + eta * Q_hvac * D)
+</pre>
+<p>For piecewise-constant outdoor concentration, the transient is
+solved analytically per piece.  All computation happens locally in
+your browser; nothing is uploaded.</p>
+
+<h2>The numbers</h2>
+<ul>
+<li><strong>MERV filter efficiencies</strong>: ASHRAE 52.2-2017 E1
+size range (0.3 - 1.0 &micro;m), interpolated from Consumer Reports
+2025 testing and AAQR 2021 measurements.</li>
+<li><strong>Home archetypes</strong>: NCCEH 2023 residential
+infiltration review and ACS ES&amp;T Air 2024 university wildfire
+testbed.</li>
+<li><strong>EPA AQI breakpoints</strong>: 2024 revised PM2.5
+NAAQS (Annual 9.0 &micro;g/m&sup3;, 24-h 35 &micro;g/m&sup3;).</li>
+<li><strong>Relative mortality risk</strong>: GBD HRAPIE log-linear
+concentration-response function, <em>RR = exp(0.0067 (C - 5))</em>
+per Burnett et al. 2018 PNAS.</li>
+</ul>
+
+<h2>What it is not</h2>
+<p>SmokeShield is a public-domain decision-support tool.  It is not a
+medical device, and the predicted indoor PM2.5 is a model output
+informed by your inputs - not a direct measurement.  For real-time
+indoor measurements, an inexpensive optical PM sensor (e.g.
+PurpleAir, AirGradient) is the gold standard.</p>
+
+<h2>Privacy</h2>
+<p>SmokeShield runs entirely in your browser.  When you click
+&ldquo;Save my home&rdquo;, your profile is stored in your browser's
+<code>localStorage</code> and never leaves your device.  There is no
+account, no server-side data, no analytics, no cookies.</p>
+</section>
+</main>
+
+<footer>
+  <a href="./">&larr; back to SmokeShield</a>
+</footer>
+</body>
+</html>

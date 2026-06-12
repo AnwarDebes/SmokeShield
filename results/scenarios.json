@@ -1,0 +1,214 @@
+{
+  "per_scenario": [
+    {
+      "name": "LA Palisades January 2025",
+      "notes": "Peak Santa Ana day, NE wind, Eaton/Palisades plume",
+      "outdoor_peak_ugm3": 345.0,
+      "outdoor_mean_ugm3": 197.0,
+      "outdoor_peak_aqi": 388,
+      "outdoor_mean_aqi": 272,
+      "per_archetype": [
+        {
+          "archetype": "leaky_old_no_hvac",
+          "label": "Pre-1980 leaky house, no central HVAC",
+          "peak_indoor_ugm3": 249.92671555600288,
+          "mean_indoor_ugm3": 143.30674802911562,
+          "peak_indoor_aqi": 319,
+          "mean_indoor_aqi": 219,
+          "time_weighted_breathed_ugm3": 149.2206481475465,
+          "relative_mortality_risk": 2.628145179897142,
+          "loss_rate_per_h": 1.4,
+          "io_ratio_steady_state": 0.7285714285714286
+        },
+        {
+          "archetype": "typical_modern_merv8",
+          "label": "1980-2010 home, central HVAC, MERV 8 default",
+          "peak_indoor_ugm3": 85.659866292971,
+          "mean_indoor_ugm3": 49.25428517525552,
+          "peak_indoor_aqi": 172,
+          "mean_indoor_aqi": 135,
+          "time_weighted_breathed_ugm3": 64.21925912481102,
+          "relative_mortality_risk": 1.4870124442468375,
+          "loss_rate_per_h": 1.28,
+          "io_ratio_steady_state": 0.25000000000000006
+        },
+        {
+          "archetype": "tight_modern_merv13",
+          "label": "Post-2010 well-sealed home, central HVAC, MERV 13",
+          "peak_indoor_ugm3": 20.33223978106954,
+          "mean_indoor_ugm3": 11.702094732503609,
+          "peak_indoor_aqi": 72,
+          "mean_indoor_aqi": 56,
+          "time_weighted_breathed_ugm3": 30.280877804164934,
+          "relative_mortality_risk": 1.1845724186007323,
+          "loss_rate_per_h": 2.54,
+          "io_ratio_steady_state": 0.05905511811023623
+        },
+        {
+          "archetype": "apartment_window_open",
+          "label": "Apartment with one window open",
+          "peak_indoor_ugm3": 313.68422979412566,
+          "mean_indoor_ugm3": 179.0314291337002,
+          "peak_indoor_aqi": 365,
+          "mean_indoor_aqi": 254,
+          "time_weighted_breathed_ugm3": 181.50738922951416,
+          "relative_mortality_risk": 3.262844979291798,
+          "loss_rate_per_h": 4.7,
+          "io_ratio_steady_state": 0.9095744680851062
+        },
+        {
+          "archetype": "passive_house_hepa",
+          "label": "Passive House with HEPA whole-house filtration",
+          "peak_indoor_ugm3": 15.0,
+          "mean_indoor_ugm3": 7.257230686560586,
+          "peak_indoor_aqi": 62,
+          "mean_indoor_aqi": 40,
+          "time_weighted_breathed_ugm3": 26.26376218105325,
+          "relative_mortality_risk": 1.1531152657822281,
+          "loss_rate_per_h": 3.834,
+          "io_ratio_steady_state": 0.036515388628064686
+        }
+      ]
+    },
+    {
+      "name": "Canadian Wildfire Smoke US Northeast June 2023",
+      "notes": "Two plume passages; peak ~ 320 ug/m^3 day 2",
+      "outdoor_peak_ugm3": 330.0000027413964,
+      "outdoor_mean_ugm3": 81.38580639707003,
+      "outdoor_peak_aqi": 377,
+      "outdoor_mean_aqi": 169,
+      "per_archetype": [
+        {
+          "archetype": "leaky_old_no_hvac",
+          "label": "Pre-1980 leaky house, no central HVAC",
+          "peak_indoor_ugm3": 239.60652559346917,
+          "mean_indoor_ugm3": 59.26699560552768,
+          "peak_indoor_aqi": 311,
+          "mean_indoor_aqi": 154,
+          "time_weighted_breathed_ugm3": 61.57277579684426,
+          "relative_mortality_risk": 1.4608779605650484,
+          "loss_rate_per_h": 1.4,
+          "io_ratio_steady_state": 0.7285714285714286
+        },
+        {
+          "archetype": "typical_modern_merv8",
+          "label": "1980-2010 home, central HVAC, MERV 8 default",
+          "peak_indoor_ugm3": 82.16006146740193,
+          "mean_indoor_ugm3": 20.379505861129868,
+          "peak_indoor_aqi": 170,
+          "mean_indoor_aqi": 72,
+          "time_weighted_breathed_ugm3": 26.500968762230773,
+          "relative_mortality_risk": 1.1549493505874129,
+          "loss_rate_per_h": 1.28,
+          "io_ratio_steady_state": 0.25000000000000006
+        },
+        {
+          "archetype": "tight_modern_merv13",
+          "label": "Post-2010 well-sealed home, central HVAC, MERV 13",
+          "peak_indoor_ugm3": 19.46429866082483,
+          "mean_indoor_ugm3": 4.844569136316458,
+          "peak_indoor_aqi": 70,
+          "mean_indoor_aqi": 27,
+          "time_weighted_breathed_ugm3": 12.49033689350553,
+          "relative_mortality_risk": 1.0514658699426183,
+          "loss_rate_per_h": 2.54,
+          "io_ratio_steady_state": 0.05905511811023623
+        },
+        {
+          "archetype": "apartment_window_open",
+          "label": "Apartment with one window open",
+          "peak_indoor_ugm3": 300.09170338892625,
+          "mean_indoor_ugm3": 73.99815449095513,
+          "peak_indoor_aqi": 355,
+          "mean_indoor_aqi": 164,
+          "time_weighted_breathed_ugm3": 74.85849738036129,
+          "relative_mortality_risk": 1.5968803304391077,
+          "loss_rate_per_h": 4.7,
+          "io_ratio_steady_state": 0.9095744680851063
+        },
+        {
+          "archetype": "passive_house_hepa",
+          "label": "Passive House with HEPA whole-house filtration",
+          "peak_indoor_ugm3": 15.0,
+          "mean_indoor_ugm3": 3.005796130726172,
+          "peak_indoor_aqi": 62,
+          "mean_indoor_aqi": 17,
+          "time_weighted_breathed_ugm3": 10.831986291386526,
+          "relative_mortality_risk": 1.0398477499443255,
+          "loss_rate_per_h": 3.834,
+          "io_ratio_steady_state": 0.03651538862806468
+        }
+      ]
+    },
+    {
+      "name": "Typical commuter day, moderate smoke",
+      "notes": "Peak ~ 95 ug/m^3 mid-afternoon, AQI 'Unhealthy for SG'",
+      "outdoor_peak_ugm3": 100.0,
+      "outdoor_mean_ugm3": 70.0,
+      "outdoor_peak_aqi": 182,
+      "outdoor_mean_aqi": 161,
+      "per_archetype": [
+        {
+          "archetype": "leaky_old_no_hvac",
+          "label": "Pre-1980 leaky house, no central HVAC",
+          "peak_indoor_ugm3": 72.49953597854302,
+          "mean_indoor_ugm3": 50.28244890894964,
+          "peak_indoor_aqi": 163,
+          "mean_indoor_aqi": 137,
+          "time_weighted_breathed_ugm3": 52.99148022011685,
+          "relative_mortality_risk": 1.3792541988632072,
+          "loss_rate_per_h": 1.4,
+          "io_ratio_steady_state": 0.7285714285714286
+        },
+        {
+          "archetype": "typical_modern_merv8",
+          "label": "1980-2010 home, central HVAC, MERV 8 default",
+          "peak_indoor_ugm3": 24.852466636301028,
+          "mean_indoor_ugm3": 17.66844782742672,
+          "peak_indoor_aqi": 80,
+          "mean_indoor_aqi": 67,
+          "time_weighted_breathed_ugm3": 23.014355821780885,
+          "relative_mortality_risk": 1.1282820701507748,
+          "loss_rate_per_h": 1.28,
+          "io_ratio_steady_state": 0.25000000000000006
+        },
+        {
+          "archetype": "tight_modern_merv13",
+          "label": "Post-2010 well-sealed home, central HVAC, MERV 13",
+          "peak_indoor_ugm3": 15.0,
+          "mean_indoor_ugm3": 4.494780022929238,
+          "peak_indoor_aqi": 62,
+          "mean_indoor_aqi": 25,
+          "time_weighted_breathed_ugm3": 10.90579307381724,
+          "relative_mortality_risk": 1.0403620874766948,
+          "loss_rate_per_h": 2.54,
+          "io_ratio_steady_state": 0.05905511811023623
+        },
+        {
+          "archetype": "apartment_window_open",
+          "label": "Apartment with one window open",
+          "peak_indoor_ugm3": 90.92770638470162,
+          "mean_indoor_ugm3": 63.1259995529781,
+          "peak_indoor_aqi": 176,
+          "mean_indoor_aqi": 156,
+          "time_weighted_breathed_ugm3": 64.79661613122387,
+          "relative_mortality_risk": 1.4927757824546566,
+          "loss_rate_per_h": 4.7,
+          "io_ratio_steady_state": 0.9095744680851061
+        },
+        {
+          "archetype": "passive_house_hepa",
+          "label": "Passive House with HEPA whole-house filtration",
+          "peak_indoor_ugm3": 15.0,
+          "mean_indoor_ugm3": 2.8844609452315617,
+          "peak_indoor_aqi": 62,
+          "mean_indoor_aqi": 16,
+          "time_weighted_breathed_ugm3": 9.425670006656821,
+          "relative_mortality_risk": 1.0300959868794337,
+          "loss_rate_per_h": 3.834,
+          "io_ratio_steady_state": 0.03651538862806468
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "per_case": [
+    {
+      "archetype": "leaky_old_no_hvac",
+      "C_out_ugm3": 25.0,
+      "C_in_predicted_ugm3": 18.214285714285715,
+      "io_ratio_predicted": 0.7285714285714286,
+      "io_ratio_published_min": 0.6,
+      "io_ratio_published_max": 0.9,
+      "source": "NCCEH 2023 review",
+      "within_published_band": true
+    },
+    {
+      "archetype": "leaky_old_no_hvac",
+      "C_out_ugm3": 50.0,
+      "C_in_predicted_ugm3": 36.42857142857143,
+      "io_ratio_predicted": 0.7285714285714286,
+      "io_ratio_published_min": 0.6,
+      "io_ratio_published_max": 0.9,
+      "source": "NCCEH 2023 review",
+      "within_published_band": true
+    },
+    {
+      "archetype": "leaky_old_no_hvac",
+      "C_out_ugm3": 100.0,
+      "C_in_predicted_ugm3": 72.85714285714286,
+      "io_ratio_predicted": 0.7285714285714286,
+      "io_ratio_published_min": 0.6,
+      "io_ratio_published_max": 0.9,
+      "source": "NCCEH 2023 review",
+      "within_published_band": true
+    },
+    {
+      "archetype": "leaky_old_no_hvac",
+      "C_out_ugm3": 200.0,
+      "C_in_predicted_ugm3": 145.71428571428572,
+      "io_ratio_predicted": 0.7285714285714286,
+      "io_ratio_published_min": 0.6,
+      "io_ratio_published_max": 0.9,
+      "source": "NCCEH 2023 review",
+      "within_published_band": true
+    },
+    {
+      "archetype": "leaky_old_no_hvac",
+      "C_out_ugm3": 350.0,
+      "C_in_predicted_ugm3": 255.00000000000003,
+      "io_ratio_predicted": 0.7285714285714286,
+      "io_ratio_published_min": 0.6,
+      "io_ratio_published_max": 0.9,
+      "source": "NCCEH 2023 review",
+      "within_published_band": true
+    },
+    {
+      "archetype": "typical_modern_merv8",
+      "C_out_ugm3": 25.0,
+      "C_in_predicted_ugm3": 6.250000000000001,
+      "io_ratio_predicted": 0.25000000000000006,
+      "io_ratio_published_min": 0.2,
+      "io_ratio_published_max": 0.4,
+      "source": "Aerosol AQR 2021",
+      "within_published_band": true
+    },
+    {
+      "archetype": "typical_modern_merv8",
+      "C_out_ugm3": 50.0,
+      "C_in_predicted_ugm3": 12.500000000000002,
+      "io_ratio_predicted": 0.25000000000000006,
+      "io_ratio_published_min": 0.2,
+      "io_ratio_published_max": 0.4,
+      "source": "Aerosol AQR 2021",
+      "within_published_band": true
+    },
+    {
+      "archetype": "typical_modern_merv8",
+      "C_out_ugm3": 100.0,
+      "C_in_predicted_ugm3": 25.000000000000004,
+      "io_ratio_predicted": 0.25000000000000006,
+      "io_ratio_published_min": 0.2,
+      "io_ratio_published_max": 0.4,
+      "source": "Aerosol AQR 2021",
+      "within_published_band": true
+    },
+    {
+      "archetype": "typical_modern_merv8",
+      "C_out_ugm3": 200.0,
+      "C_in_predicted_ugm3": 50.00000000000001,
+      "io_ratio_predicted": 0.25000000000000006,
+      "io_ratio_published_min": 0.2,
+      "io_ratio_published_max": 0.4,
+      "source": "Aerosol AQR 2021",
+      "within_published_band": true
+    },
+    {
+      "archetype": "typical_modern_merv8",
+      "C_out_ugm3": 350.0,
+      "C_in_predicted_ugm3": 87.50000000000001,
+      "io_ratio_predicted": 0.25000000000000006,
+      "io_ratio_published_min": 0.2,
+      "io_ratio_published_max": 0.4,
+      "source": "Aerosol AQR 2021",
+      "within_published_band": true
+    },
+    {
+      "archetype": "tight_modern_merv13",
+      "C_out_ugm3": 25.0,
+      "C_in_predicted_ugm3": 1.4763779527559058,
+      "io_ratio_predicted": 0.059055118110236234,
+      "io_ratio_published_min": 0.05,
+      "io_ratio_published_max": 0.2,
+      "source": "ACS ES&T Air 2024",
+      "within_published_band": true
+    },
+    {
+      "archetype": "tight_modern_merv13",
+      "C_out_ugm3": 50.0,
+      "C_in_predicted_ugm3": 2.9527559055118116,
+      "io_ratio_predicted": 0.059055118110236234,
+      "io_ratio_published_min": 0.05,
+      "io_ratio_published_max": 0.2,
+      "source": "ACS ES&T Air 2024",
+      "within_published_band": true
+    },
+    {
+      "archetype": "tight_modern_merv13",
+      "C_out_ugm3": 100.0,
+      "C_in_predicted_ugm3": 5.905511811023623,
+      "io_ratio_predicted": 0.059055118110236234,
+      "io_ratio_published_min": 0.05,
+      "io_ratio_published_max": 0.2,
+      "source": "ACS ES&T Air 2024",
+      "within_published_band": true
+    },
+    {
+      "archetype": "tight_modern_merv13",
+      "C_out_ugm3": 200.0,
+      "C_in_predicted_ugm3": 11.811023622047246,
+      "io_ratio_predicted": 0.059055118110236234,
+      "io_ratio_published_min": 0.05,
+      "io_ratio_published_max": 0.2,
+      "source": "ACS ES&T Air 2024",
+      "within_published_band": true
+    },
+    {
+      "archetype": "tight_modern_merv13",
+      "C_out_ugm3": 350.0,
+      "C_in_predicted_ugm3": 20.66929133858268,
+      "io_ratio_predicted": 0.059055118110236234,
+      "io_ratio_published_min": 0.05,
+      "io_ratio_published_max": 0.2,
+      "source": "ACS ES&T Air 2024",
+      "within_published_band": true
+    },
+    {
+      "archetype": "apartment_window_open",
+      "C_out_ugm3": 25.0,
+      "C_in_predicted_ugm3": 22.739361702127656,
+      "io_ratio_predicted": 0.9095744680851062,
+      "io_ratio_published_min": 0.8,
+      "io_ratio_published_max": 0.95,
+      "source": "AAQR 2021 fig 6",
+      "within_published_band": true
+    },
+    {
+      "archetype": "apartment_window_open",
+      "C_out_ugm3": 50.0,
+      "C_in_predicted_ugm3": 45.47872340425531,
+      "io_ratio_predicted": 0.9095744680851062,
+      "io_ratio_published_min": 0.8,
+      "io_ratio_published_max": 0.95,
+      "source": "AAQR 2021 fig 6",
+      "within_published_band": true
+    },
+    {
+      "archetype": "apartment_window_open",
+      "C_out_ugm3": 100.0,
+      "C_in_predicted_ugm3": 90.95744680851062,
+      "io_ratio_predicted": 0.9095744680851062,
+      "io_ratio_published_min": 0.8,
+      "io_ratio_published_max": 0.95,
+      "source": "AAQR 2021 fig 6",
+      "within_published_band": true
+    },
+    {
+      "archetype": "apartment_window_open",
+      "C_out_ugm3": 200.0,
+      "C_in_predicted_ugm3": 181.91489361702125,
+      "io_ratio_predicted": 0.9095744680851062,
+      "io_ratio_published_min": 0.8,
+      "io_ratio_published_max": 0.95,
+      "source": "AAQR 2021 fig 6",
+      "within_published_band": true
+    },
+    {
+      "archetype": "apartment_window_open",
+      "C_out_ugm3": 350.0,
+      "C_in_predicted_ugm3": 318.35106382978717,
+      "io_ratio_predicted": 0.9095744680851062,
+      "io_ratio_published_min": 0.8,
+      "io_ratio_published_max": 0.95,
+      "source": "AAQR 2021 fig 6",
+      "within_published_band": true
+    },
+    {
+      "archetype": "passive_house_hepa",
+      "C_out_ugm3": 25.0,
+      "C_in_predicted_ugm3": 0.912884715701617,
+      "io_ratio_predicted": 0.03651538862806468,
+      "io_ratio_published_min": 0.02,
+      "io_ratio_published_max": 0.1,
+      "source": "Persily 1998 envelope leakage",
+      "within_published_band": true
+    },
+    {
+      "archetype": "passive_house_hepa",
+      "C_out_ugm3": 50.0,
+      "C_in_predicted_ugm3": 1.825769431403234,
+      "io_ratio_predicted": 0.03651538862806468,
+      "io_ratio_published_min": 0.02,
+      "io_ratio_published_max": 0.1,
+      "source": "Persily 1998 envelope leakage",
+      "within_published_band": true
+    },
+    {
+      "archetype": "passive_house_hepa",
+      "C_out_ugm3": 100.0,
+      "C_in_predicted_ugm3": 3.651538862806468,
+      "io_ratio_predicted": 0.03651538862806468,
+      "io_ratio_published_min": 0.02,
+      "io_ratio_published_max": 0.1,
+      "source": "Persily 1998 envelope leakage",
+      "within_published_band": true
+    },
+    {
+      "archetype": "passive_house_hepa",
+      "C_out_ugm3": 200.0,
+      "C_in_predicted_ugm3": 7.303077725612936,
+      "io_ratio_predicted": 0.03651538862806468,
+      "io_ratio_published_min": 0.02,
+      "io_ratio_published_max": 0.1,
+      "source": "Persily 1998 envelope leakage",
+      "within_published_band": true
+    },
+    {
+      "archetype": "passive_house_hepa",
+      "C_out_ugm3": 350.0,
+      "C_in_predicted_ugm3": 12.780386019822638,
+      "io_ratio_predicted": 0.03651538862806468,
+      "io_ratio_published_min": 0.02,
+      "io_ratio_published_max": 0.1,
+      "source": "Persily 1998 envelope leakage",
+      "within_published_band": true
+    }
+  ],
+  "n_passed": 25,
+  "n_total": 25
+}
