@@ -16,11 +16,24 @@
 
 ---
 
+SmokeShield estimates the PM2.5 you would actually breathe inside your
+home during a wildfire smoke event. Pick a home type (or enter your own
+air leakage, ventilation, HVAC filter and fan settings) plus the
+outdoor PM2.5, and a mass-balance model returns the indoor level, its
+EPA AQI category, and which interventions would lower it most. It is a
+research prototype (v0.1.0): it reproduces published indoor/outdoor
+PM2.5 ratios for five home types (25 of 25 cases inside the published
+bands, see `results/validation.json`), treats the home as one
+well-mixed volume, and needs you to type in the outdoor PM2.5 yourself
+(Limitations in [the paper](paper/smokeshield.pdf)).
+
+▶ See this project in the film *Show Its Work*: https://youtu.be/pefnyZ-oCcM?t=2466
+
 When the outdoor AQI hits 300, your phone tells you "stay indoors."
 SmokeShield tells you what "indoors" actually means *for your home*:
 the predicted PM2.5 level you would be breathing, the corresponding
 EPA AQI category and mortality risk, and a ranked list of the four
-interventions that would reduce it the most for the least money.
+interventions that would reduce it the most, with what each one costs.
 
 This repository contains:
 
@@ -30,8 +43,10 @@ This repository contains:
 2. `frontend/`: a single-page client-side web app that ports the
    physics to JavaScript. No login, no analytics, no backend.
 3. `experiments/`: three experiments that validate the model
-   against published I/O measurements, rank interventions, and
-   simulate three documented smoke events.
+   against published indoor/outdoor (I/O) measurements, rank
+   interventions, and simulate two documented smoke events (LA
+   Palisades, January 2025; Canadian smoke over the US Northeast,
+   June 2023) plus a typical moderate-smoke day.
 4. `paper/smokeshield.pdf`: the technical paper documenting the
    model, validation, and frontend.
 
@@ -41,7 +56,7 @@ The frontend is a single-page static app. No build step.
 
 ```bash
 cd frontend
-python3 -m http.server 8000
+python3 -m http.server 8000      # or, from the repo root: make frontend
 # open http://127.0.0.1:8000/
 ```
 
@@ -71,16 +86,19 @@ for r in evaluate_interventions(profile, C_outdoor_ugm3=200.0)[:3]:
 ## Running the experiments
 
 ```bash
+pip install -e ".[dev]"   # the library plus pytest, which make test needs
 make experiments       # validation, interventions, scenarios -> results/*.json
 make figures           # produces paper/figures/*.pdf
-make paper             # builds paper/smokeshield.pdf
-make test              # runs the unit tests
+make paper             # builds paper/smokeshield.pdf (needs pdflatex and bibtex)
+make test              # runs the 12 unit tests
 ```
+
+The Makefile runs `python3` with `PYTHONPATH=.` from the repo root.
 
 ## Validation
 
 All 25 cases (5 archetypes × 5 outdoor concentrations) reproduce the
-indoor/outdoor PM2.5 ratio reported in five published studies (NCCEH
+indoor/outdoor PM2.5 ratio reported in five published sources (NCCEH
 2023, AAQR 2021, ACS ES&T Air 2024, AAQR 2021 fig 6, Persily 1998)
 within the cited bands. See `results/validation.json` and the
 paper's §3.
